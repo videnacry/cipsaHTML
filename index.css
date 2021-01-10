@@ -34,3 +34,8 @@
 .flex-column {
     flex-direction: column;
 }
+
+ins.underline-dotted {
+    text-decoration: none;
+    border-bottom: 1px dotted black;
+}
