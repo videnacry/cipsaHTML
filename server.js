@@ -7,8 +7,8 @@ const app = express()
 app.use(express.static('style'))
 app.set('view engine', 'ejs')
 
-app.get('/', (req, res) => {
-    res.render('index')
+app.get('/exercise/:num', (req, res) => {
+    res.render('index', {exercisePath: './exercise' + req.params.num})
 })
 
 app.listen(process.env.PORT)
