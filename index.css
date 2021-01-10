@@ -6,6 +6,10 @@
     width: 520px;
 }
 
+.w-full {
+    width: 100%;
+}
+
 .border-3 {
     border: 3px solid black;
 }
@@ -38,4 +42,20 @@
 ins.underline-dotted {
     text-decoration: none;
     border-bottom: 1px dotted black;
+}
+
+table.border-collapse {
+    border-collapse: collapse;
+}
+
+thead.border-b-dashed {
+    border-bottom: 1px dashed #202020;
+}
+
+.fw-normal {
+    font-weight: normal;
+}
+
+.text-center {
+    text-align: center;
 }
