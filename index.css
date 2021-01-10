@@ -2,6 +2,10 @@
     width: 420px;
 }
 
+.w-520 {
+    width: 520px;
+}
+
 .border-3 {
     border: 3px solid black;
 }
