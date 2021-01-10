@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <%- include('../assets/head') %>
+<% include(exercisePath) %>
 <body>
     <h2><%= exerciseTitle %></h2>
     <p><%= exerciseSentence %></p>
     <div class="d-flex justify-content-center">
         <article class="w-420 border-3 border-primary rounded-top px-10">
             <main>
-                <%- include('./exercise1') %>
+                <%- include(exercisePath) %>
             </main>
         </article>
     </div>
