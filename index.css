@@ -1,0 +1,32 @@
+.w-420 {
+    width: 420px;
+}
+
+.border-3 {
+    border: 3px solid black;
+}
+
+.border-primary {
+    border-color: blue;
+}
+
+.rounded-top {
+    border-radius: 10px 10px 0 0 ;
+}
+
+.px-10 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
