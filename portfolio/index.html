@@ -5,15 +5,15 @@
     <title>Ejercicios HTML</title>
 </head>
 <body>
-    <h2>Ejercicio 6</h2>
-    <p>A partir de la estructura de directorios y archivos indicada en la siguiente imagen:</p>
-    <ol class="list-group">
+    <h2 id="exercise-title">Ejercicio 6</h2>
+    <p id="exercise-sentence">A partir de la estructura de directorios y archivos indicada en la siguiente imagen:</p>
+    <ol id="task-list" class="list-group">
         <li>2) Crear la p&aacute;gina de &iacute;ndice del portfolio:</li>
     </ol>
     <div class="d-flex justify-content-center">
         <article class="w-420 border-3 border-primary rounded-top px-10">
             <main>
-                <a href="/exercise/6">Volver a la pagina principal</a>
+                <a id="index-link" href="/exercise/6">Volver a la pagina principal</a>
                 <h1>Ultimos proyectos</h1>
                 <p>
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec 
@@ -24,14 +24,67 @@
                     Etiam consectetuer, mauris vitae cursus scelerisque, dui turpis 
                     dignissim justo, et euismod enim  odio sit amet erat.
                 </p>
-                <a href="/images/proyecto1.png">Ver imagen del Proyecto 1</a>
+                <a id="project1-link" href="/images/proyecto1.png">Ver imagen del Proyecto 1</a>
                 <h3>Proyecto 2</h3>
                 <p>
                     Etiam consectetuer, mauris vitae cursus scelerisque, dui turpis 
                     dignissim justo, et euismod enim  odio sit amet erat.
                 </p>
-                <a href="/images/proyecto2.png">Ver imagen del Proyecto 2</a>
+                <a id="project2-link" href="/images/proyecto2.png">Ver imagen del Proyecto 2</a>
             </main>
         </article>
     </div>
+
+    <script>
+        if (window.opener) {
+            let faviconElem = document.createElement('link')
+            faviconElem.href = '/favicon'
+            faviconElem.rel = 'icon'
+            faviconElem.type = 'image/png'
+            document.getElementsByTagName('head')[0].appendChild(faviconElem)
+
+            let exerciseTitleElem = document.getElementById('exercise-title')
+            exerciseTitleElem.textContent = 'Ejercicio 7'
+
+            let exerciseSentenceElem = document.getElementById('exercise-sentence')
+            exerciseSentenceElem.textContent = 'Enlazar el favicon en todas las páginas del ejercicio 6 y añadir todos los atributos posibles a los enlaces.'
+
+            let taskListElem = document.getElementById('task-list')
+            taskListElem.style.display = 'none'
+
+            let indexLink = document.getElementById('index-link')
+            indexLink.addEventListener('click', e => {
+                e.preventDefault()
+                window.open('/exercise/7')
+            })
+            indexLink.download = 'exercise-7'
+            indexLink.hreflang = 'spanish'
+            indexLink.media = 'computer'
+            indexLink.ping = 'localhost:3000'
+            indexLink.referrerpolicy = 'same-origin'
+            indexLink.rel = 'exercise 7 pages'
+            indexLink.target = '_blank'
+            indexLink.type = 'text/html'
+
+            let project1Link = document.getElementById('project1-link')
+            project1Link.download = 'exercise-7'
+            project1Link.hreflang = 'spanish'
+            project1Link.media = 'computer'
+            project1Link.ping = 'localhost:3000'
+            project1Link.referrerpolicy = 'same-origin'
+            project1Link.rel = 'exercise 7 pages'
+            project1Link.target = '_blank'
+            project1Link.type = 'image/png'
+            
+            let project2Link = document.getElementById('project2-link')
+            project2Link.download = 'exercise-7'
+            project2Link.hreflang = 'spanish'
+            project2Link.media = 'computer'
+            project2Link.ping = 'localhost:3000'
+            project2Link.referrerpolicy = 'same-origin'
+            project2Link.rel = 'exercise 7 pages'
+            project2Link.target = '_blank'
+            project2Link.type = 'image/png'
+        }
+    </script>
 </body>

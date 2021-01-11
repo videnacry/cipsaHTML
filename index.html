@@ -5,9 +5,9 @@
     <title>Ejercicios HTML</title>
 </head>
 <body>
-    <h2>Ejercicio 6</h2>
-    <p>A partir de la estructura de directorios y archivos indicada en la siguiente imagen:</p>
-    <ol class="list-group">
+    <h2 id="exercise-title">Ejercicio 6</h2>
+    <p id="exercise-sentence">A partir de la estructura de directorios y archivos indicada en la siguiente imagen:</p>
+    <ol id="task-list" class="list-group">
         <li>1) Crear la siguiente página llamada <small>indice.html</small> que sirva como p&aacute;gina principal del sitio:</li>
     </ol>
     <div class="d-flex justify-content-center">
@@ -25,8 +25,41 @@
                     dignissim justo, et euismod enim  odio sit amet erat. Aliquam dui 
                     ligula, porttitor eu, facilisis vitae, ornare sed, tortor.
                 </p>
-                <a href="/portfolio/index.html">Acceder a los ultimos proyectos de Mi Sitio</a>
+                <a id="projects-link" href="/portfolio/index.html">Acceder a los ultimos proyectos de Mi Sitio</a>
             </main>
         </article>
     </div>
+
+    <script>
+        if (window.location.href.search('7')) {
+            let faviconElem = document.createElement('link')
+            faviconElem.href = '/favicon'
+            faviconElem.rel = 'icon'
+            faviconElem.type = 'image/png'
+            document.getElementsByTagName('head')[0].appendChild(faviconElem)
+
+            let exerciseTitleElem = document.getElementById('exercise-title')
+            exerciseTitleElem.textContent = 'Ejercicio 7'
+
+            let exerciseSentenceElem = document.getElementById('exercise-sentence')
+            exerciseSentenceElem.textContent = 'Enlazar el favicon en todas las páginas del ejercicio 6 y añadir todos los atributos posibles a los enlaces.'
+
+            let taskListElem = document.getElementById('task-list')
+            taskListElem.style.display = 'none'
+
+            let projectsLink = document.getElementById('projects-link')
+            projectsLink.addEventListener('click', e => {
+                e.preventDefault()
+                window.open('/portfolio/index.html')
+            })
+            projectsLink.download = 'exercise-7-portfolio'
+            projectsLink.hreflang = 'spanish'
+            projectsLink.media = 'computer'
+            projectsLink.ping = 'localhost:3000'
+            projectsLink.referrerpolicy = 'same-origin'
+            projectsLink.rel = 'exercise 7 pages'
+            projectsLink.target = '_blank'
+            projectsLink.type = 'text/html'
+        }
+    </script>
 </body>
