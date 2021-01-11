@@ -63,3 +63,7 @@ thead.border-b-dashed {
 .list-group {
     list-style: none;
 }
+
+.list-group.style-disc {
+    list-style: disc;
+}
