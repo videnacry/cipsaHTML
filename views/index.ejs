@@ -13,7 +13,8 @@
     </div>
 
     <script>
-        if (location.href.substr(location.href.length - 2, 2) !== '/1') {
+        const smallestWidth = ['/1', '12']
+        if (smallestWidth.indexOf(location.href.substr(location.href.length - 2, 2)) == '-1') {
             document.getElementById('article').classList.replace('w-420', 'w-520')
         }
     </script>
