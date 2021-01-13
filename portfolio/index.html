@@ -36,6 +36,16 @@
     </div>
 
     <script>
+        
+        /**
+         * Changes textContent from html element by its id
+         * @param {string} elemId -> id from html element
+         * @param {string} text -> new data for textContent
+        */
+        function changeText(elemId, text) {
+            document.getElementById(elemId).textContent = text
+        }
+
         if (window.opener) {
             let faviconElem = document.createElement('link')
             faviconElem.href = '/favicon'
@@ -43,11 +53,8 @@
             faviconElem.type = 'image/png'
             document.getElementsByTagName('head')[0].appendChild(faviconElem)
 
-            let exerciseTitleElem = document.getElementById('exercise-title')
-            exerciseTitleElem.textContent = 'Ejercicio 7'
-
-            let exerciseSentenceElem = document.getElementById('exercise-sentence')
-            exerciseSentenceElem.textContent = 'Enlazar el favicon en todas las páginas del ejercicio 6 y añadir todos los atributos posibles a los enlaces.'
+            changeText('exercise-title', 'Ejercicio 7')
+            changeText('exercise-sentence', 'Enlazar el favicon en todas las páginas del ejercicio 6 y añadir todos los atributos posibles a los enlaces.')
 
             let taskListElem = document.getElementById('task-list')
             taskListElem.style.display = 'none'
@@ -85,6 +92,20 @@
             project2Link.rel = 'exercise 7 pages'
             project2Link.target = '_blank'
             project2Link.type = 'image/png'
+        } else if (window.location.href.search('exercise/10') >= 0) {
+            changeText('exercise-title', 'Ejercicio 10')
+            changeText('exercise-sentence', 'Modificar la página de índice del portfolio de los ejercicios 6 y 7 para mostrar directamente las imágenes de los proyectos.')
+
+            let taskListElem = document.getElementById('task-list')
+            taskListElem.style.display = 'none'
+            
+            let project1Link = document.getElementById('project1-link')
+            project1Link.style.display = 'none'
+            project1Link.insertAdjacentHTML('beforebegin', '<img src="/images/proyecto1.png" />')
+
+            let project2Link = document.getElementById('project2-link')
+            project2Link.style.display = 'none'
+            project2Link.insertAdjacentHTML('beforebegin', '<img src="/images/proyecto2.png" />')
         }
     </script>
 </body>
