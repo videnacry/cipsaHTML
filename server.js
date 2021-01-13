@@ -16,6 +16,9 @@ app.get('/exercise/6', (req, res) => {
 app.get('/exercise/7', (req, res) => {
     res.sendFile(join(process.cwd(), 'index.html'))
 })
+app.get('/exercise/10', (req, res) => {
+    res.sendFile(join(process.cwd(), 'portfolio', 'index.html'))
+})
 app.get('/exercise/:num', (req, res) => {
     res.render('index', {exercisePath: './exercise' + req.params.num})
 })
