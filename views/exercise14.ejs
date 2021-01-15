@@ -4,13 +4,13 @@
 <h3>Rellena tu CV</h3>
 <form method="POST" action="/php/insertar_cv.php">
     <div><label for="name">Nombre</label></div>
-    <div><input id="name" type="text" maxlength="30"></div>
+    <div><input name="name" id="name" type="text" maxlength="30" size="15"></div>
     <div><label for="lastname">Apellidos</label></div>
-    <div><input id="lastname" type="text" maxlength="80"></div>
+    <div><input name="lastname" id="lastname" type="text" maxlength="80" size="45"></div>
     <div><label for="password">Contraseña</label></div>
-    <div><input id="password" type="password" maxlength="10"></div>
+    <div><input name="password" id="password" type="password" maxlength="10" size="15"></div>
     <div><label for="dni">DNI</label></div>
-    <div><input id="dni" type="text"></div>
+    <div><input name="dni" id="dni" type="text" autocomplete="off" minlength="10" maxlength="10" size="5"></div>
     <div><label>Sexo</label></div>
     <div><input name="sex" id="man" type="radio"><label for="man">Hombre</label></div>
     <div><input name="sex" id="woman" type="radio"><label for="woman">Mujer</label></div>
@@ -18,12 +18,12 @@
     <div><label for="photo">Incluir mi foto </label><input id="photo" type="file"></div>
     <br>
     <div>
-        <input id="suscribe" type="checkbox" checked>
+        <input name="suscribe" id="suscribe" type="checkbox" checked>
         <label for="suscribe">Suscribirme al boletín de novedades</label>
     </div>
     <br>
     <div>
         <input type="submit" value="Guardar cambios">
-        <input type="buttons" value="Borrar los datos introducidos">
+        <input type="reset" value="Borrar los datos introducidos">
     </div>
 </form>
