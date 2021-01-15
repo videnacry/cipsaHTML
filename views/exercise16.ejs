@@ -1,0 +1,51 @@
+<% exerciseTitle = 'Ejercicio 16' %>
+<% exerciseSentence  = 'Determinar el código HTML necesario para crear el formulario que se muestra en la siguiente imagen:' %>
+
+<h3>Informaci&oacute;n sobre el producto</h3>
+<form>
+    <fieldset>
+        <legend>Datos b&aacute;sicos</legend>
+        <div><label for="name">Nombre</label></div>
+        <div><input id="name" type="text" size="55"></div>
+        <br>
+        <div><label for="description">Descripci&oacute;n</label></div>
+        <div><textarea id="description" rows="6" cols="60"></textarea></div>
+        <br>
+        <div>
+            <label for="photo">Foto</label>&nbsp;
+            <input id="photo" type="file">
+        </div>
+        <div>
+            <input id="counter" type="checkbox">&nbsp;
+            <label for="counter">A&ntilde;adir contador de visitas</label>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Datos econ&oacute;micos</legend>
+        <div>
+            <label for="price">Precio</label>&nbsp;
+            <input id="price" type="text">&nbsp;&euro;&emsp;
+            <label for="taxes">Impuestos</label>&nbsp;
+            <select name="taxes" id="taxes">
+                <option value="4">4&percnt;</option>
+                <option value="7">7&percnt;</option>
+                <option value="16">16&percnt;</option>
+                <option value="25">25&percnt;</option>
+            </select>
+        </div>
+        <br>
+        <div><label for="promo">Promoci&oacute;n</label></div>
+        <div>
+            <input id="none" type="radio">&nbsp;
+            <label for="none">Ninguno</label>
+        </div>
+        <div>
+            <input type="radio" id="free">&nbsp;
+            <label for="free">Transporte gratuito</label>
+        </div>
+        <div>
+            <input type="radio" id="5">&nbsp;
+            <label for="5">Descuento 5&percnt;</label>
+        </div>
+    </fieldset>
+</form>
