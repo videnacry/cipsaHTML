@@ -1,0 +1,48 @@
+<% exerciseTitle = 'Ejercicio 15' %>
+<% exerciseSentence  = 'Determinar el código HTML necesario para crear el formulario que se muestra en la siguiente imagen:' %>
+
+<h3>Rellena tu CV</h3>
+<fieldset>
+    <legend>Dtos personales</legend>
+    <div><label for="province">Provincia</label></div>
+    <div>
+        <select id="province">
+            <option selected>- selecciona -</option>
+            <option>Barcelona</option>
+            <option>Madrid</option>
+        </select>
+    </div>
+    <br>
+    <div><label for="year">Fecha de nacimiento</label></div>
+    <div><input type="text" maxlength="2" size="1"> de 
+        <select>
+            <option value="january" selected>Enero</option>
+            <option value="febrary">Febrero</option>
+            <option value="march">Marzo</option>
+            <option value="april">Abril</option>
+            <option value="may">Mayo</option>
+            <option value="june">Junio</option>
+            <option value="july">Julio</option>
+            <option value="agoust">Agosto</option>
+            <option value="september">Septiembre</option>
+            <option value="october">Octubre</option>
+            <option value="november">Noviembre</option>
+            <option value="december">Diciembre</option>
+        </select> de <input id="year" type="text" maxlength="4" size="2">
+    </div>
+    <br>
+    <div><label for="interest-topic">Temas de inter&eacute;s</label></div>
+    <div>
+        <textarea rows="5" cols="32">
+Administraci&oacute;n de bases de datos
+An&aacute;lisis y programaci&oacute;n
+Arquitectura
+Calidad
+ERP, CRM, Business Intelligence
+Marqueting
+Ecommerce
+Librer&iacute;a de activos
+Usuarios
+        </textarea>
+    </div>
+</fieldset>
