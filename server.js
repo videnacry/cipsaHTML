@@ -30,4 +30,6 @@ app.get('/index.html', (req, res) => {
     res.sendFile(join(process.cwd(), 'proyecto_beron', 'index.html'))
 })
 
+app.use('/project', projectRoute)
+
 app.listen(process.env.PORT)
