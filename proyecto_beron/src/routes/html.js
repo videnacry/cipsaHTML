@@ -11,6 +11,10 @@ route.get('/footer', (req, res) => {
     sendHtml('./proyecto_beron/src/assets/footer.html', res)
 })
 
+route.get('/head', (req, res) => {
+    sendHtml('./proyecto_beron/src/assets/head.html', res)
+})
+
 /**
  * Send html from a file as string
  * @param {string} path relative path of the file which content is going to be sent
