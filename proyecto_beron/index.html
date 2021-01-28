@@ -68,15 +68,24 @@
         </table>
     </body>
     <script>
-        fetch('/project/nav', {method: 'GET'})
-        .then(res => res.json())
-        .then(({html, err}) => {
-            if (err) {
-                console.log(err)
-            } else {
-                console.log(html)
-                document.getElementById('nav').innerHTML = html
-            }
-        })
+        // Get nav
+        getHtml('/project/nav', 'nav')
+
+        /**
+         * Replace html from an element by its id
+         * @param {string} url -> url to get html
+         * @param {string} id -> id of the element wich html we want to replace
+         */
+        function getHtml(url, id) {
+            fetch(url, {method: 'GET'})
+            .then(res => res.json())
+            .then(({html, err}) => {
+                if (err) {
+                    console.log(err)
+                } else {
+                    document.getElementById(id).innerHTML = html
+                }
+            })
+        }
     </script>
 </html>
