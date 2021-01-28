@@ -7,6 +7,15 @@ route.get('/nav', (req, res) => {
     sendHtml('./proyecto_beron/src/assets/nav.html', res)
 })
 
+route.get('/footer', (req, res) => {
+    sendHtml('./proyecto_beron/src/assets/footer.html', res)
+})
+
+/**
+ * Send html from a file as string
+ * @param {string} path relative path of the file which content is going to be sent
+ * @param {express.res} res variable used to sent a response to client
+ */
 function sendHtml(path, res) {
     if (existsSync(path)) {
         const html = readFileSync(path, {encoding: 'utf-8'})
