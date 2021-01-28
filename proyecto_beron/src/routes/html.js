@@ -4,8 +4,12 @@ import express from 'express'
 const route = express.Router()
 
 route.get('/nav', (req, res) => {
-    if (existsSync('./proyecto_beron/src/assets/nav.html')) {
-        const html = readFileSync('./proyecto_beron/src/assets/nav.html', {encoding: 'utf-8'})
+    sendHtml('./proyecto_beron/src/assets/nav.html', res)
+})
+
+function sendHtml(path, res) {
+    if (existsSync(path)) {
+        const html = readFileSync(path, {encoding: 'utf-8'})
         res.status(200).json({
             html
         })
@@ -14,6 +18,6 @@ route.get('/nav', (req, res) => {
             err: 'nav.html not found in proyecto_beron'
         })
     }
-})
+}
 
 export const projectRoute = route
