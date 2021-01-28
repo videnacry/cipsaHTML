@@ -1,11 +1,11 @@
-import fs, { existsSync, readFileSync } from 'fs'
+import { existsSync, readFileSync } from 'fs'
 import express from 'express'
 
 const route = express.Router()
 
 route.get('/header', (req, res) => {
-    if (existsSync('./proyecto_beron/header.html')) {
-        const html = readFileSync('./proyecto_beron/header.html', {encoding: 'utf-8'})
+    if (existsSync('./proyecto_beron/src/assets/header.html')) {
+        const html = readFileSync('./proyecto_beron/src/assets/header.html', {encoding: 'utf-8'})
         res.status(200).json({
             html
         })
