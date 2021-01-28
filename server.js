@@ -1,7 +1,7 @@
 import 'dotenv/config.js'
 import { join } from 'path'
 import express from 'express'
-import { projectRoute } from './src/routes/html.js'
+import { projectRoute } from './proyecto_beron/src/routes/html.js'
 
 const app = express()
 
@@ -23,6 +23,8 @@ app.get('/exercise/10', (req, res) => {
 app.get('/exercise/:num', (req, res) => {
     res.render('index', {exercisePath: './exercise' + req.params.num})
 })
+
+app.use('/images', express.static('proyecto_beron/images'))
 app.get('/', (req, res) => {
     res.sendFile(join(process.cwd(), 'proyecto_beron', 'index.html'))
 })
