@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head id="head">
+    </head>
+    <body>
+        <table width="100%" cellpadding="10px">
+            <tr>
+                <td align="center" width="20%">
+                    <nav id="nav">
+                    </nav>
+                </td>
+                <td width="60%">
+                    <header>
+                        <h1 align="center">INICIATIVA</h1>
+                    </header>
+                    <main>
+                        <article>
+                            <h1>Con una buena base...</h1>
+                            <img src="" alt="">
+                            <p>
+                                Ya no sorprende que algunas personas miren a lo alto y pienses como trascenderlo, y sorprende menos 
+                                a&uacute;n, que se vayan generando f&oacute;rmulas que incluso sus autores no siguen, pero dos muy 
+                                interesantes han hecho gala el 3 de febrero del 2021 en las salas de la filosof&iacute;a enfocada al 
+                                desarrollo personal, la primera dice -desvanecete y vuelve- esta pr&aacute;ctica conlleva aplicar el 
+                                modelo de la respiraci&oacute;n de modo que un corto tiempo realizas tu trabajo y otro m&aacute;s 
+                                piensas en cualquier otra cosa, y la otra es -diviertete con el aire- que implica obsecionarse con 
+                                cualquier elemento de tu entorno.
+                            </p>
+                            <div align="end"><a href="/coexistence">leer m&aacute;s...</a></div>
+                        </article>
+                        <article>
+                            <h1>En un mundo de emociones</h1>
+                            <img src="" alt="">
+                            <p>
+                                Entre nuestras noticias m&aacute;s top tenemos que ¡se est&aacute;n realizando consumibles para generar 
+                                emociones! y el objetivo inicial no ha sido combatir la depresi&oacute;n, adicciones, etc. si no, 
+                                conseguir un rendimiento tan elevado como el que pocas personas llevan, sin necesidad de ser esas 
+                                personas, es por ello que estos alimentos por llamarlos de alguna manera, causan emociones de manera 
+                                que las relaciones con lo que estes realizando en ese momento.
+                            </p>
+                            <div align="end"><a href="/rest">leer m&aacute;s...</a></div>
+                        </article>
+                    </main>
+                </td>
+                <td width="20%"></td>
+            </tr>
+            <tfoot>
+                <tr>
+                    <td colspan="3">
+                        <footer id="footer">
+                        </footer>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+    <script>
+        // Get nav
+        getHtml('/project/nav', 'nav')
+
+        //Get footer
+        getHtml('/project/footer', 'footer')
+
+        //Get head
+        getHtml('/project/head', 'head')
+
+        /**
+         * Replace html from an element by its id
+         * @param {string} url -> url to get html
+         * @param {string} id -> id of the element wich html we want to replace
+         */
+        function getHtml(url, id) {
+            fetch(url, {method: 'GET'})
+            .then(res => res.json())
+            .then(({html, err}) => {
+                if (err) {
+                    console.log(err)
+                } else {
+                    document.getElementById(id).innerHTML = html
+                }
+            })
+        }
+    </script>
+</html>

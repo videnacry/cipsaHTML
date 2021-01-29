@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head id="head">
+    </head>
+    <body>
+        <table width="100%" cellpadding="10px">
+            <tr>
+                <td align="center" width="20%">
+                    <nav id="nav">
+                    </nav>
+                </td>
+                <td width="60%">
+                    <header>
+                        <h1 align="center">DESCANZO</h1>
+                    </header>
+                    <main>
+                        <article>
+                            <h1>Con los ojos bendados</h1>
+                            <img src="" alt="">
+                            <p>
+                                Una moda acecha a los jovenes y es nada menos que utilizar su tiempo libre para bendarse los ojos y en 
+                                algunos casos ¡disfrutar de sus otros sentidos!, la tecnolog&iacute;a hace ya muchos dias que est&aacute; 
+                                en nuestra puerta y ¡viene cargada de luz!, al llamar tanto la atenci&oacute;n de nuestra vista es 
+                                comprensible que muchas personas lleven los ojos, digamos que sobrecargados, y la soluci&oacute;n para 
+                                muchos es dejarlos descanzar m&aacute;s tiempo, a la vez que escuchan un audiolibro, m&uacute;sica, 
+                                tienen una charla por tel&eacute;fono, y un gran ETC.
+                            </p>
+                            <div align="end"><a href="/coexistence">leer m&aacute;s...</a></div>
+                        </article>
+                        <article>
+                            <h1>¡Estoy durmiendo, no descanzando!</h1>
+                            <img src="" alt="">
+                            <p>
+                                El tiempo no le ha quitado protagonismo a una cuestion que almenos una vez se habr&aacute; hecho presente 
+                                en las mentes de las personas, relaci&oacute;n entre el sue&ntilde;o y el descanzo, ¿acaso no existen 
+                                veces en que con pocas horas nos levantamos renovados y otras muy diferentes? hace relativamente pocas horas 
+                                se ha llevado una conversaci&oacute;n exhaustiva sobre el tema en Barcelona, y la respuesta ganadora ha 
+                                sido -¿no es verdad que en situaciones de agotamiento, buscamos acurrucarnos calentitos y cerrar los ojos?, 
+                                pero ¿no existen tambi&eacute;n situaciones en que nos vamos a dormir para evitar un cansancio futuro?, 
+                                de esta manera muchas razones pueden llevarte a dormir...-.
+                            </p>
+                            <div align="end"><a href="/rest">leer m&aacute;s...</a></div>
+                        </article>
+                    </main>
+                </td>
+                <td width="20%"></td>
+            </tr>
+            <tfoot>
+                <tr>
+                    <td colspan="3">
+                        <footer id="footer">
+                        </footer>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+    <script>
+        // Get nav
+        getHtml('/project/nav', 'nav')
+
+        //Get footer
+        getHtml('/project/footer', 'footer')
+
+        //Get head
+        getHtml('/project/head', 'head')
+
+        /**
+         * Replace html from an element by its id
+         * @param {string} url -> url to get html
+         * @param {string} id -> id of the element wich html we want to replace
+         */
+        function getHtml(url, id) {
+            fetch(url, {method: 'GET'})
+            .then(res => res.json())
+            .then(({html, err}) => {
+                if (err) {
+                    console.log(err)
+                } else {
+                    document.getElementById(id).innerHTML = html
+                }
+            })
+        }
+    </script>
+</html>

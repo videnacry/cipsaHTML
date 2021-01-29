@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head id="head">
+    </head>
+    <body>
+        <table width="100%" cellpadding="10px">
+            <tr>
+                <td align="center" width="20%">
+                    <nav id="nav">
+                    </nav>
+                </td>
+                <td width="60%">
+                    <header>
+                        <h1 align="center">COEXISTENCIA</h1>
+                    </header>
+                    <main>
+                        <article>
+                            <h1>La pica de la experiencia</h1>
+                            <img src="" alt="">
+                            <p>
+                                No solo es que esa persona no tiene nuestra experiencia, si no que adem&aacute;s podr&iacute;a tener 
+                                otra que vaya en contra, entonces ¿c&oacute;mo va a llegar a comprendernos? ¿c&oacute;mo vamos a 
+                                llegar a comprenderle? porque no basta con decir -as&iacute; es su forma de ser- o -esta mal de la cabeza-,
+                                en ocasiones puede bastar con preguntar, pero no esperes que te sepa dar una respuesta f&aacute;cil de 
+                                comprender, y ¿qu&eacute; hacemos con algo dif&iacute;cil de comprender? si buscamos comprenderlo, lo 
+                                consumimos una y otra y otra vez.
+                            </p>
+                        </article>
+                        <article>
+                            <h1>¿Puedes ser mi smartphone?</h1>
+                            <img src="" alt="">
+                            <p>
+                                Podr&iacute;a sonar divertido que esperemos que una persona funcione igual que nuestro smartphone, 
+                                ¡y no estar&iacute;a muy lejos de la realidad!, un aplauso para aquellos que preveen que si usamos esta 
+                                comparaci&oacute;n para bien, estaremos tratando de descifrar c&oacute;mo funcionan las personas a 
+                                nuestro alrededor en lugar de odiarles o amarles.
+                            </p>
+                            <div align="end"><a href="/rest">leer m&aacute;s...</a></div>
+                        </article>
+                    </main>
+                </td>
+                <td width="20%"></td>
+            </tr>
+            <tfoot>
+                <tr>
+                    <td colspan="3">
+                        <footer id="footer">
+                        </footer>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+    <script>
+        // Get nav
+        getHtml('/project/nav', 'nav')
+
+        //Get footer
+        getHtml('/project/footer', 'footer')
+
+        //Get head
+        getHtml('/project/head', 'head')
+
+        /**
+         * Replace html from an element by its id
+         * @param {string} url -> url to get html
+         * @param {string} id -> id of the element wich html we want to replace
+         */
+        function getHtml(url, id) {
+            fetch(url, {method: 'GET'})
+            .then(res => res.json())
+            .then(({html, err}) => {
+                if (err) {
+                    console.log(err)
+                } else {
+                    document.getElementById(id).innerHTML = html
+                }
+            })
+        }
+    </script>
+</html>
