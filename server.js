@@ -2,6 +2,7 @@ import 'dotenv/config.js'
 import { join } from 'path'
 import express from 'express'
 import { projectRoute } from './proyecto_beron/src/routes/html.js'
+import { pageRoute } from './proyecto_beron/src/routes/page.js'
 
 const app = express()
 
@@ -33,5 +34,7 @@ app.get('/index.html', (req, res) => {
 })
 
 app.use('/project', projectRoute)
+app.use('/', pageRoute)
+
 
 app.listen(process.env.PORT)
