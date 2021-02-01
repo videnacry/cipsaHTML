@@ -15,8 +15,8 @@ route.get('/head', (req, res) => {
     sendHtml('./proyecto_beron/src/assets/head.html', res)
 })
 
-route.get('/addSection', (req, res) => {
-    sendHtml('./proyecto_beron/src/assets/addSection.html', res)
+route.get('/adSection', (req, res) => {
+    sendHtml('./proyecto_beron/src/assets/adSection.html', res)
 })
 
 /**
