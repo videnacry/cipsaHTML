@@ -75,7 +75,11 @@
                         </article>
                     </main>
                 </td>
-                <td width="20%"></td>
+                <td width="20%">
+                    <aside>
+                        <section id="ad-section"></section>
+                    </aside>
+                </td>
             </tr>
             <tfoot>
                 <tr>
@@ -96,6 +100,9 @@
 
         //Get head
         getHtml('/project/head', 'head')
+
+        //Get add section
+        getHtml('/project/adSection', 'ad-section')
 
         /**
          * Replace html from an element by its id

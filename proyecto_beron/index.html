@@ -7,8 +7,7 @@
             <tr>
                 <td align="center" width="20%">
                     <aside>
-                        <nav id="nav">
-                        </nav>
+                        <nav id="nav"></nav>
                     </aside>
                 </td>
                 <td width="60%">
@@ -66,7 +65,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
+                                    <td align="end">
                                         <a href="/rest">leer m&aacute;s...</a>
                                     </td>
                                 </tr>
@@ -74,7 +73,11 @@
                         </article>
                     </main>
                 </td>
-                <td width="20%"></td>
+                <td width="20%">
+                    <aside>
+                        <section id="ad-section"></section>
+                    </aside>
+                </td>
             </tr>
             <tfoot>
                 <tr>
@@ -95,6 +98,9 @@
 
         //Get head
         getHtml('/project/head', 'head')
+
+        //Get add section
+        getHtml('/project/adSection', 'ad-section')
 
         /**
          * Replace html from an element by its id
