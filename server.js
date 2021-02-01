@@ -26,6 +26,8 @@ app.get('/exercise/:num', (req, res) => {
 })
 
 app.use('/images', express.static('proyecto_beron/images'))
+app.use('/mp3', express.static('proyecto_beron/mp3'))
+
 app.get('/', (req, res) => {
     res.sendFile(join(process.cwd(), 'proyecto_beron', 'index.html'))
 })
