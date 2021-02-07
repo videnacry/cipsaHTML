@@ -25,7 +25,8 @@
                                 <td width="50%">
                                     <main>
                                         <article>
-                                            <form method="POST" action="/contacto.php">
+                                            <form method="POST" action="/contacto.php" 
+                                            >
                                                 <fieldset>
                                                     <legend>Datos de contacto</legend>
                                                     <div>
@@ -45,12 +46,46 @@
                                                         <label for="phone">tel&eacute;fono</label>
                                                     </div>
                                                 </fieldset>
+                                                <fieldset>
+                                                    <legend>Mensaje</legend>
+                                                    <div>
+                                                        <select name="scope" id="scope">
+                                                            <option value="convivence">Convivencia</option>
+                                                            <option value="rest">Descanzo</option>
+                                                            <option value="initiative">Iniciativa</option>
+                                                        </select>&emsp;
+                                                        <label for="scope">secci&oacute;n de noticias</label>
+                                                    </div>
+                                                    <br>
+                                                    <div>
+                                                        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                                                    </div>
+                                                </fieldset>
+                                                <fieldset>
+                                                    <legend>Sugerencias</legend>
+                                                    <textarea name="feedback" id="feedback" cols="30" rows="10"></textarea>
+                                                    <div>
+                                                        <input type="checkbox" id="give-score" name="give_score" onchange="score.disabled = give_score.checked ? false:true">&emsp;
+                                                        <label for="give-score">Marque la casilla para puntuar</label>
+                                                    </div>
+                                                    <div>
+                                                        1<input name="score" id="score" type="range" value="1" max="3" min="1" disabled
+                                                        oninput="score_meaning.value = score.value == '1' ? 'malo':score.value == '2' ? 'regular':'bueno'">3&emsp;
+                                                        <output name="score_meaning" for="score">malo</output>
+                                                    </div>
+                                                </fieldset>
+                                                <fieldset>
+                                                    <input type="submit" value="Enviar">
+                                                </fieldset>
                                             </form>
                                         </article>
                                     </main>
                                 </td>
-                                <td width="50%">
+                                <td width="50%" align="center">
                                     <img src="./images/mailbox.png" alt="buzon" width="100%">
+                                    <div>
+                                        Image by <a href="https://pixabay.com/users/susannp4-1777190/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1564368">Susann Mielke</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1564368">Pixabay</a>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
