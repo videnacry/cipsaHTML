@@ -15,5 +15,8 @@ route.get('/rest', (req, res) => {
 route.get('/initiative', (req, res) => {
     res.sendFile(join(process.cwd(), 'proyecto_beron', 'initiative.html'))
 })
+route.get('/donde_estamos', (req, res) => {
+    res.sendFile(join(process.cwd(), 'proyecto_beron', 'dondeEstamos.html'))
+})
 
 export const pageRoute = route
