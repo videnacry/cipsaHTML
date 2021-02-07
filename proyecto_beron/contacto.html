@@ -10,28 +10,38 @@
                     </nav>
                 </td>
                 <td width="60%">
-                    <header>
-                        <h1 align="center">CONTACTO</h1>
-                    </header>
-                    <main>
-                        <article>
-                            <h1>La pica de la experiencia</h1>
-                            <img src="" alt="">
-                            <p>
-                                Existen ocaciones en que nos vemos de cara con <b>respuestas aparentemente descabelladas</b>, ¡pero claro!, 
-                                <b>ante nuestra experiencia...</b>
-                            </p>
-                            <div align="end"><a href="/coexistence">leer m&aacute;s...</a></div>
-                        </article>
-                        <article>
-                            <h1>¡Estoy durmiendo, no descanzando!</h1>
-                            <img src="" alt="">
-                            <p>
-                                Seguramente ya habr&aacute;s escuchado <b>"Dormir todo el d&iacute;a"</b> es que ¿acaso duermen para descanzar?
-                            </p>
-                            <div align="end"><a href="/rest">leer m&aacute;s...</a></div>
-                        </article>
-                    </main>
+                    <table>
+                        <td width="50%">
+                            <header>
+                                <h1 align="center">CONTACTO</h1>
+                            </header>
+                            <main>
+                                <article>
+                                    <form method="POST" action="/contacto.php">
+                                        <fieldset>
+                                            <legend>Datos de contacto</legend>
+                                            <div>
+                                                <input type="text" name="name" id="name">&emsp;
+                                                <label for="name">nombres</label>
+                                            </div>
+                                            <div>
+                                                <input type="text" name="lastname" id="lastname">&emsp;
+                                                <label for="lastname">apellidos</label>
+                                            </div>
+                                            <div>
+                                                <input type="email" name="email" id="email">&emsp;
+                                                <label for="email">correo electr&oacute;nico</label>
+                                            </div>
+                                            <div>
+                                                <input type="tel" name="phone" id="phone">&emsp;
+                                                <label for="phone">tel&eacute;fono</label>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </article>
+                            </main>
+                        </td>
+                    </table>
                 </td>
                 <td width="20%">
                     <aside>
