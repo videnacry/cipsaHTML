@@ -4,13 +4,14 @@
 <body>
     <h2><%= exerciseTitle %></h2>
     <p><%= exerciseSentence %></p>
-    <img src=<%='/images/exercises/exercise'+exerciseNum+'.jpg'%> alt="exercise-img"/>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex flex-wrap justify-content-center">
+        <img src=<%='/images/exercises/exercise'+exerciseNum+'.jpg'%> alt="exercise-img"/>
         <article id="article" class="w-420 border-3 border-primary rounded-top px-10">
-            <main>
+            <main id="exercise">
                 <%- include(exercisePath) %>
             </main>
         </article>
+        <code><pre id="html"></pre></code>
     </div>
 
     <script>
@@ -21,5 +22,7 @@
         } else if (smallestWidth.indexOf(location.href.substr(location.href.length - 2, 2)) == '-1') {
             document.getElementById('article').classList.replace('w-420', 'w-520')
         }
+
+        document.getElementById('html').textContent = document.getElementById('exercise').innerHTML
     </script>
 </body>
