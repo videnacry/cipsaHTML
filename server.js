@@ -22,7 +22,7 @@ app.get('/exercise/10', (req, res) => {
     res.sendFile(join(process.cwd(), 'portfolio', 'index.html'))
 })
 app.get('/exercise/:num', (req, res) => {
-    res.render('index', {exercisePath: './exercise' + req.params.num})
+    res.render('index', {exercisePath: './exercise' + req.params.num, exerciseNum: req.params.num})
 })
 
 app.use('/images', express.static('proyecto_beron/images'))
