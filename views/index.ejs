@@ -39,7 +39,7 @@
             let codeArray = codeString.split('>');
             codeArray.splice(codeArray.indexOf(''), 1);
             return codeArray.map(elem => {
-                let code = elem.substr(elem.indexOf('<'), elem.length-1)
+                let code = elem.substr(elem.indexOf('<'), elem.length)
                 code = code.replace('<', '&lt')
                 elem = elem.replace('<', '&lt')
                 return elem.replace(code, '<span class="html-element-color">' + code + '&gt;</span>')
