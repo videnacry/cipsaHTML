@@ -11,7 +11,7 @@
                 <%- include(exercisePath) %>
             </main>
         </article>
-        <code><pre id="html"></pre></code>
+        <code><pre id="html" class="code"></pre></code>
     </div>
 
     <script>
@@ -23,6 +23,28 @@
             document.getElementById('article').classList.replace('w-420', 'w-520')
         }
 
-        document.getElementById('html').textContent = document.getElementById('exercise').innerHTML
+        //-----------------------------------SHOW CODE----------------------------
+        const htmlCode = document.getElementById('exercise').innerHTML
+        const htmlElements = [
+        ]
+        const htmlAtributes = [
+            'type', 'width', 'size', 'href', 'src',
+            'alt', 'border', 'cellspacing', 'cellpadding',
+            'colspan', 'rowspan', 'align', 'class', 'for',
+            'id', 'name', 'action', 'method', 'maxlength', 
+            'minlength', 'autocomplete', 'disabled', 'checked',
+            'multiple', 'value', 'rows', 'cols'
+        ]
+        function colorCodeText (codeString) {
+            let codeArray = codeString.split('>');
+            codeArray.splice(codeArray.indexOf(''), 1);
+            return codeArray.map(elem => {
+                let code = elem.substr(elem.indexOf('<'), elem.length-1)
+                code = code.replace('<', '&lt')
+                elem = elem.replace('<', '&lt')
+                return elem.replace(code, '<span class="html-element-color">' + code + '&gt;</span>')
+            }).join('')
+        }
+        document.getElementById('html').innerHTML = colorCodeText(htmlCode)
     </script>
 </body>
