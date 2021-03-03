@@ -75,3 +75,17 @@ thead.border-b-dashed {
 .list-group.style-disc {
     list-style: disc;
 }
+
+.code {
+    background-color: #1e1e1e;
+    color: #d7d5d6;
+}
+.html-element-color {
+    color: #7699b7;
+}
+.html-attribute-color {
+    color: #7a7f83;
+}
+.string-color {
+    color: #bc9b92;
+}
