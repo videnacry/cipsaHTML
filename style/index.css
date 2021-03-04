@@ -35,6 +35,40 @@ a {
     outline: none;
 }
 
+button.show-code {
+    background-color: #dde9f7;
+    padding: 10px;
+    margin: 0.5vw;
+    margin-bottom: 1vw;
+    border-radius: 10px;
+    float: right;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #5b7ba4;
+    text-shadow: -1px 0 #8fafd5, 1px 0 #a2c2f1;
+}
+button.show-code:hover {
+    transform: scale(1.1);
+}
+button.show-code:focus {
+    outline: none;
+}
+
+.code {
+    background-color: #1e1e1e;
+    color: #d7d5d6;
+}
+.html-element-color {
+    color: #7699b7;
+}
+.html-element-color attribute {
+    color: #b9e1ed;
+}
+.html-element-color string,.html-element-color string * {
+    color: #bc9b92;
+}
+
 .w-420 {
     width: 420px;
 }
@@ -113,16 +147,6 @@ thead.border-b-dashed {
     list-style: disc;
 }
 
-.code {
-    background-color: #1e1e1e;
-    color: #d7d5d6;
-}
-.html-element-color {
-    color: #7699b7;
-}
-.html-element-color attribute {
-    color: #b9e1ed;
-}
-.html-element-color string,.html-element-color string * {
-    color: #bc9b92;
+.hide {
+    display: none;
 }
