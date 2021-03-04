@@ -54,7 +54,7 @@ button.show-code:hover {
 button.show-code:focus {
     outline: none;
 }
-code {
+.modal {
     position: absolute;
     top: 0;
     left: 0;
@@ -98,6 +98,10 @@ code {
 
 .w-full {
     width: 100%;
+}
+
+.m-5-vw {
+    margin: 5vw;
 }
 
 .border-3 {
