@@ -1,3 +1,40 @@
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.exercises-nav {
+    border-radius: 1vw;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    background-color: #dde9f7;
+    box-shadow: inset 2px 2px #d6d6d6;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #5b7ba4;
+    text-shadow: -1px 0 #8fafd5, 1px 0 #a2c2f1;
+}
+
+.exercises-nav>li>a {
+    padding: 10px;
+    margin: 0.5vw;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.exercises-nav>li>a:hover {
+    background-color: white;
+    box-shadow: 2px 2px #cad2df;
+    color: #4e4e4e;
+    text-shadow: -1px 0 #9a9a9a, 1px 0 #b9b9b9;
+}
+
+.exercises-nav>li:focus {
+    outline: none;
+}
+
 .w-420 {
     width: 420px;
 }
