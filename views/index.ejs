@@ -41,13 +41,13 @@
                 htmlCode = htmlCode.replace('<', '&lt')
                 let htmlContentColored = colorHtmlAttribute(htmlCode)
                 htmlContentColored = colorHtmlString(htmlContentColored)
-                // let htmlContentColored = colorHtmlString(htmlCode)
                 elem = elem.replace('<', '&lt')
                 return elem.replace(htmlCode, '<span class="html-element-color">' + htmlContentColored + '&gt;</span>')
             }).join('')
         }
         function colorHtmlString (htmlCode) {
             let htmlCodeChars = htmlCode.split('')
+            let response = htmlCode
             let next = true, index = 0, indexCount = 0
             while (next) {
                 let i = htmlCodeChars.indexOf('"')
@@ -57,7 +57,7 @@
                     if (indexCount === 2) 
                     {
                         const replace = htmlCode.substr(index, (i + 1) - index)
-                        htmlCode = htmlCode.replace(replace, '<span class="string-color">' + replace + '</span>')
+                        response = response.replace(replace, "<string>" + replace + '</string>')
                         indexCount=0
                     }
                     index = i
@@ -65,10 +65,10 @@
                     next=false
                 }
             }
-            return htmlCode
+            return response
         }
         function colorHtmlAttribute (htmlCode) {
-            htmlCode = htmlCode.replace(/class|type|width|size|href|src|alt|border|cellspacing|cellpadding|colspan|rowspan|align|for|id|name|action|method|maxlength|minlength|autocomplete|disabled|checked|multiple|value|rows|cols|=/g, word => '<attribute>' + word + '</attribute>')
+            htmlCode = htmlCode.replace(/class|type|width|size|href|src|alt|border|cellspacing|cellpadding|colspan|rowspan|align|for|id|name|action|method|maxlength|minlength|autocomplete|disabled|checked|multiple|value|rows|cols|selected|=/g, word => '<attribute>' + word + '</attribute>')
             return htmlCode
         }
         document.getElementById('html').innerHTML = colorCodeText(htmlCode)
