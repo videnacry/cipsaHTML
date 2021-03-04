@@ -26,12 +26,12 @@
         //-----------------------------------SHOW CODE----------------------------
         const htmlCode = document.getElementById('exercise').innerHTML
         const htmlAtributes = [
-            'type', 'width', 'size', 'href', 'src',
+            'class', 'type', 'width', 'size', 'href', 'src',
             'alt', 'border', 'cellspacing', 'cellpadding',
-            'colspan', 'rowspan', 'align', 'class', 'for',
+            'colspan', 'rowspan', 'align', 'for',
             'id', 'name', 'action', 'method', 'maxlength', 
             'minlength', 'autocomplete', 'disabled', 'checked',
-            'multiple', 'value', 'rows', 'cols'
+            'multiple', 'value', 'rows', 'cols', '='
         ]
         function colorCodeText (codeString) {
             let codeArray = codeString.split('>');
@@ -39,9 +39,11 @@
             return codeArray.map(elem => {
                 let htmlCode = elem.substr(elem.indexOf('<'), elem.length)
                 htmlCode = htmlCode.replace('<', '&lt')
-                let htmlCodeColoredString = colorHtmlString(htmlCode)
+                let htmlContentColored = colorHtmlAttribute(htmlCode)
+                htmlContentColored = colorHtmlString(htmlContentColored)
+                // let htmlContentColored = colorHtmlString(htmlCode)
                 elem = elem.replace('<', '&lt')
-                return elem.replace(htmlCode, '<span class="html-element-color">' + htmlCodeColoredString + '&gt;</span>')
+                return elem.replace(htmlCode, '<span class="html-element-color">' + htmlContentColored + '&gt;</span>')
             }).join('')
         }
         function colorHtmlString (htmlCode) {
@@ -63,7 +65,10 @@
                     next=false
                 }
             }
-            console.log(htmlCode)
+            return htmlCode
+        }
+        function colorHtmlAttribute (htmlCode) {
+            htmlCode = htmlCode.replace(/class|type|width|size|href|src|alt|border|cellspacing|cellpadding|colspan|rowspan|align|for|id|name|action|method|maxlength|minlength|autocomplete|disabled|checked|multiple|value|rows|cols|=/g, word => '<attribute>' + word + '</attribute>')
             return htmlCode
         }
         document.getElementById('html').innerHTML = colorCodeText(htmlCode)
