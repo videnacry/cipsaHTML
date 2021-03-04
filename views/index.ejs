@@ -2,8 +2,10 @@
 <%- include('../assets/head') %>
 <% include(exercisePath) %>
 <body>
+    <%- include('../assets/nav') %>
     <h2><%= exerciseTitle %></h2>
     <p><%= exerciseSentence %></p>
+    <button class="show-code" onclick="document.getElementsByTagName('code')[0].classList.toggle('hide')">Show code</button>
     <div class="d-flex flex-wrap justify-content-center">
         <img src=<%='/images/exercises/exercise'+exerciseNum+'.jpg'%> alt="exercise-img"/>
         <article id="article" class="w-420 border-3 border-primary rounded-top px-10">
