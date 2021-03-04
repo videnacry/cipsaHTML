@@ -86,6 +86,6 @@ thead.border-b-dashed {
 .html-element-color attribute {
     color: #b9e1ed;
 }
-.string-color {
+.html-element-color string,.html-element-color string * {
     color: #bc9b92;
 }
