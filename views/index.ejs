@@ -13,7 +13,10 @@
                 <%- include(exercisePath) %>
             </main>
         </article>
-        <code><pre id="html" class="code"></pre></code>
+        <code onclick="document.getElementsByTagName('code')[0].classList.toggle('hide')" class='hide modal'>
+            <button class="show-code m-5-vw" style='margin:5vw'>x</button>
+            <pre id="html" class="code"></pre>
+        </code>
     </div>
 
     <script>
