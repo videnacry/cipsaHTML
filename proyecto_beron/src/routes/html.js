@@ -3,6 +3,10 @@ import express from 'express'
 
 const route = express.Router()
 
+route.get('/nav-exercises', (req, res) => {
+    sendHtml('./assets/nav.ejs', res)
+})
+
 route.get('/nav', (req, res) => {
     sendHtml('./proyecto_beron/src/assets/nav.html', res)
 })
@@ -32,7 +36,7 @@ function sendHtml(path, res) {
         })
     } else {
         res.status(500).json({
-            err: 'nav.html not found in proyecto_beron'
+            err: path + ' not found in proyecto_beron'
         })
     }
 }
